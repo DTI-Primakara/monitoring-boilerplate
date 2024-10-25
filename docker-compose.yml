@@ -61,13 +61,3 @@ services:
     volumes:
       - ./config/prometheus:/etc/prometheus:ro
       - prometheus-data:/prometheus
-
-  grafana:
-    image: docker.io/grafana/grafana-oss:11.2.2-security-01
-    container_name: grafana
-    ports:
-      - "3000:3000"
-    volumes:
-      - grafana-data:/var/lib/grafana
-    restart: unless-stopped
-
