@@ -15,4 +15,4 @@ scrape_configs:
       - localhost
     labels:
       job: nginx
-      __path__: /var/log/nginx/*log
+      __path__: /var/log/apache2/*log
