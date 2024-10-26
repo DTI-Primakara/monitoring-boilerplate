@@ -13,8 +13,8 @@ services:
     volumes: 
       - ./config/loki-config.yaml:/etc/loki/loki-config.yaml
     restart: unless-stopped
-    #ports:
-    #  - "3100:3100"
+    ports:
+      - "3100:3100"
     command: -config.file=/etc/loki/local-config.yaml
 
   promtail:
@@ -55,8 +55,8 @@ services:
     image: docker.io/prom/prometheus:v2.54.1
     restart: unless-stopped
     container_name: prometheus
-    #ports:
-    #  - 9090:9090
+    ports:
+      - 9090:9090
     command: "--config.file=/etc/prometheus/prometheus.yaml"
     volumes:
       - ./config/prometheus:/etc/prometheus:ro
